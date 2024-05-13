@@ -1,0 +1,103 @@
+/* Default styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 160px;
+  border: 2px solid black;
+}
+#healthProHeading {
+  
+  margin-left: 30px; /* Adjust this value as needed */
+}
+
+
+.navbar ul {
+  margin-right: 20vh;
+}
+
+.navbar-brand {
+  margin-right: 20%;
+  display: flex;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav li {
+  margin-right: 30px; 
+}
+
+.navbar-nav li:last-child {
+  margin-right: 0; 
+}
+
+.navbar-nav a {
+  color: inherit;
+  display: flex;
+  text-decoration: none;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+/* doctor-navbar.css */
+
+/* Remove bullets from list items */
+.navbar-nav li {
+  font-weight: bold;
+  list-style-type: none;
+}
+
+/* Remove underline  */
+.navbar-brand h1 {
+  text-decoration: none;
+  margin-left: 5vh;
+  width: max-content;
+}
+
+form {
+  right: 0%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px; /*  padding for spacing */
+  }
+
+  .navbar ul {
+    margin: 0; /* Remove margin */
+  }
+
+  .navbar-brand {
+    margin: 0; /* Remove margin */
+    margin-bottom: 20px; 
+    display: flex;/* between navbar-brand and other items */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    margin-top: 20px; /*  margin between nav items */
+  }
+
+  .navbar-nav li {
+    margin: 10px 0; /* margin between nav items */
+  }
+
+  .form-inline {
+    margin-top: 20px; /* between navbar and form */
+  }
+
+  .navbar-brand h1 {
+    font-size: 5px; /* font size for smaller screens */
+  }
+}

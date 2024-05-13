@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+header{
+  background-color: burlywood;
+}

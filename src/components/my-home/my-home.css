@@ -1,0 +1,20 @@
+.headings{
+    color: rgb(239, 149, 149);
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2vw;
+    margin-top: 1vw;
+    font-weight: bold;
+  }
+  hr{
+    border: 1px solid black;
+  }
+    .card-img-top {
+      margin-top: 2vh;
+     
+      margin-right: 2vh;
+      max-width: 100%;
+      border: 2px solid black;
+      height: 60vh;
+      width: 98%;
+    }

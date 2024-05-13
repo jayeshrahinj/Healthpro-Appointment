@@ -1,0 +1,36 @@
+/* doctor-list.css */
+
+:host {
+  display: block;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+button{
+  text-align: center;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 10%;
+  font-weight: bold;
+  width: 10vh;
+  height: 5vh;
+  margin-bottom: 10%;
+  background-color: rgb(154, 244, 134);
+}
+.card {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width as needed */
+  margin: 0 10px 20px;
+  border: 1px solid #ccc; /* Add a border */
+}
+
+.card img {
+  width: 40vh;
+  height: 40vh;
+}
+
+.card-body {
+  padding: 1rem;
+}

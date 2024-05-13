@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+.headings{
+  color: rgb(239, 149, 149);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2vw;
+  margin-top: 1vw;
+}
