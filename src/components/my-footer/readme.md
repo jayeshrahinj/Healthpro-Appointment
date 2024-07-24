@@ -5,16 +5,23 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `Color`  | `color`   |             | `string` | `undefined` |
+
+
 ## Dependencies
 
 ### Used by
 
- - [my-component](../my-component)
+ - [my-home](../my-home)
 
 ### Graph
 ```mermaid
 graph TD;
-  my-component --> my-footer
+  my-home --> my-footer
   style my-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

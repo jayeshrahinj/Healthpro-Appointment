@@ -2,15 +2,22 @@
   display: block;
 }
 
-.card {
+.card {width: 380px;
  margin-top: 20px;
- margin-left: 30%;
+ margin-left: 12%;
 margin-bottom: 10px;
   border: 1px solid black;
   max-width: 400px;
+  display: inline-flex;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
+}
+.login-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 .card-text {
   list-style-type: none; /* Remove default list styling */
@@ -33,6 +40,32 @@ margin-bottom: 10px;
   color: #121111;
   font-size: 24px;
   font-weight: bold;
+}
+.loading-message a{
+    text-decoration: none;
+    color: aliceblue;
+  }
+#cancel{
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: rgb(14, 1, 1);
+  margin-left: 80px;
+  background-color: rgb(231, 15, 15);
+
+}
+#Completed{
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: rgb(14, 1, 1);
+  margin-left: 20px;
+  background-color: rgb(84, 220, 47);
+
 }
 
 .card-text {
@@ -80,6 +113,10 @@ margin-bottom: 10px;
   font-weight: bold;
   color: #333;
 }
+.loading-message a{
+  
+  color: rgb(37, 192, 50);
+}
 h1{
   font-size: 20px;
   text-align: center;
@@ -88,9 +125,17 @@ h1{
 
 @media (max-width: 768px) {
   .card {
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    width: 88%;
+    margin-right: 12px;
+  }
+  .loading-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }

@@ -9,12 +9,12 @@
 
 ### Used by
 
- - [my-component](../my-component)
+ - [my-home](../my-home)
 
 ### Graph
 ```mermaid
 graph TD;
-  my-component --> my-contactform
+  my-home --> my-contactform
   style my-contactform fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

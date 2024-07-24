@@ -1,6 +1,6 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, getAssetPath } from '@stencil/core';
 
-interface Circledetails {
+interface CircleDetails {
   name: string;
   imageUrl: string;
 }
@@ -9,17 +9,17 @@ interface Circledetails {
   tag: 'circle-card',
   styleUrl: 'circle-card.css',
   shadow: true,
+  assetsDirs: ['assets'],
 })
 export class CircleCard {
-  
-  circleCards: Circledetails[] = [
-    { name: "Urology", imageUrl: "../../assests/c1.png" },
-    { name: "Neurology", imageUrl: "../../assests/c2.webp" },
-    { name: "Orthopedic", imageUrl: "../../assests/c3.webp" },
-    { name: "Cardiologist", imageUrl:"../../assests/c4.webp" },
-    { name: "Dentist", imageUrl: "../../assests/c5.webp" },
+  circleCards: CircleDetails[] = [
+    { name: 'Urology', imageUrl: 'c1.png' },
+    { name: 'Neurology', imageUrl: 'c2.webp' },
+    { name: 'Orthopedic', imageUrl: 'c3.webp' },
+    { name: 'Cardiologist', imageUrl: 'c4.webp' },
+    { name: 'Dentist', imageUrl: 'c5.webp' },
   ];
-  
+
   render() {
     return (
       <Host>
@@ -27,15 +27,13 @@ export class CircleCard {
           {this.circleCards.map((card, index) => (
             <div class="col" key={index}>
               <div class="circle-card">
-                <img src={card.imageUrl} alt={card.name} />
+                <img src={getAssetPath(`./assets/${card.imageUrl}`)} alt={card.name} />
                 <p>{card.name}</p>
               </div>
             </div>
           ))}
         </div>
-
       </Host>
     );
   }
-
 }

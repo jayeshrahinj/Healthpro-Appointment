@@ -20,16 +20,33 @@ export namespace Components {
     }
     interface LogoLogin {
     }
+    interface MyAdminnav {
+        "backColor": string;
+        "fontFamily": string;
+        "fontSize": string;
+        "textColor": string;
+    }
     interface MyAppointment {
     }
     interface MyContactform {
     }
+    interface MyError {
+        "message": string;
+    }
+    interface MyFeedback {
+    }
     interface MyFooter {
         "Color": string;
     }
+    interface MyHeading {
+        "text": string;
+    }
     interface MyHome {
     }
+    interface MyImage {
+    }
     interface MyLogin {
+        "name": string;
     }
     interface MyNavbar {
         "backColor": string;
@@ -37,8 +54,9 @@ export namespace Components {
         "fontSize": string;
         "textColor": string;
     }
-    interface NyHeading {
-        "name": string;
+    interface MyRegister {
+    }
+    interface MyUser {
     }
     interface OptionButtons {
     }
@@ -88,6 +106,12 @@ declare global {
         prototype: HTMLLogoLoginElement;
         new (): HTMLLogoLoginElement;
     };
+    interface HTMLMyAdminnavElement extends Components.MyAdminnav, HTMLStencilElement {
+    }
+    var HTMLMyAdminnavElement: {
+        prototype: HTMLMyAdminnavElement;
+        new (): HTMLMyAdminnavElement;
+    };
     interface HTMLMyAppointmentElement extends Components.MyAppointment, HTMLStencilElement {
     }
     var HTMLMyAppointmentElement: {
@@ -100,17 +124,41 @@ declare global {
         prototype: HTMLMyContactformElement;
         new (): HTMLMyContactformElement;
     };
+    interface HTMLMyErrorElement extends Components.MyError, HTMLStencilElement {
+    }
+    var HTMLMyErrorElement: {
+        prototype: HTMLMyErrorElement;
+        new (): HTMLMyErrorElement;
+    };
+    interface HTMLMyFeedbackElement extends Components.MyFeedback, HTMLStencilElement {
+    }
+    var HTMLMyFeedbackElement: {
+        prototype: HTMLMyFeedbackElement;
+        new (): HTMLMyFeedbackElement;
+    };
     interface HTMLMyFooterElement extends Components.MyFooter, HTMLStencilElement {
     }
     var HTMLMyFooterElement: {
         prototype: HTMLMyFooterElement;
         new (): HTMLMyFooterElement;
     };
+    interface HTMLMyHeadingElement extends Components.MyHeading, HTMLStencilElement {
+    }
+    var HTMLMyHeadingElement: {
+        prototype: HTMLMyHeadingElement;
+        new (): HTMLMyHeadingElement;
+    };
     interface HTMLMyHomeElement extends Components.MyHome, HTMLStencilElement {
     }
     var HTMLMyHomeElement: {
         prototype: HTMLMyHomeElement;
         new (): HTMLMyHomeElement;
+    };
+    interface HTMLMyImageElement extends Components.MyImage, HTMLStencilElement {
+    }
+    var HTMLMyImageElement: {
+        prototype: HTMLMyImageElement;
+        new (): HTMLMyImageElement;
     };
     interface HTMLMyLoginElement extends Components.MyLogin, HTMLStencilElement {
     }
@@ -124,11 +172,17 @@ declare global {
         prototype: HTMLMyNavbarElement;
         new (): HTMLMyNavbarElement;
     };
-    interface HTMLNyHeadingElement extends Components.NyHeading, HTMLStencilElement {
+    interface HTMLMyRegisterElement extends Components.MyRegister, HTMLStencilElement {
     }
-    var HTMLNyHeadingElement: {
-        prototype: HTMLNyHeadingElement;
-        new (): HTMLNyHeadingElement;
+    var HTMLMyRegisterElement: {
+        prototype: HTMLMyRegisterElement;
+        new (): HTMLMyRegisterElement;
+    };
+    interface HTMLMyUserElement extends Components.MyUser, HTMLStencilElement {
+    }
+    var HTMLMyUserElement: {
+        prototype: HTMLMyUserElement;
+        new (): HTMLMyUserElement;
     };
     interface HTMLOptionButtonsElement extends Components.OptionButtons, HTMLStencilElement {
     }
@@ -150,13 +204,19 @@ declare global {
         "doctor-list": HTMLDoctorListElement;
         "image-show": HTMLImageShowElement;
         "logo-login": HTMLLogoLoginElement;
+        "my-adminnav": HTMLMyAdminnavElement;
         "my-appointment": HTMLMyAppointmentElement;
         "my-contactform": HTMLMyContactformElement;
+        "my-error": HTMLMyErrorElement;
+        "my-feedback": HTMLMyFeedbackElement;
         "my-footer": HTMLMyFooterElement;
+        "my-heading": HTMLMyHeadingElement;
         "my-home": HTMLMyHomeElement;
+        "my-image": HTMLMyImageElement;
         "my-login": HTMLMyLoginElement;
         "my-navbar": HTMLMyNavbarElement;
-        "ny-heading": HTMLNyHeadingElement;
+        "my-register": HTMLMyRegisterElement;
+        "my-user": HTMLMyUserElement;
         "option-buttons": HTMLOptionButtonsElement;
         "show-doctor": HTMLShowDoctorElement;
     }
@@ -176,16 +236,33 @@ declare namespace LocalJSX {
     }
     interface LogoLogin {
     }
+    interface MyAdminnav {
+        "backColor"?: string;
+        "fontFamily"?: string;
+        "fontSize"?: string;
+        "textColor"?: string;
+    }
     interface MyAppointment {
     }
     interface MyContactform {
     }
+    interface MyError {
+        "message"?: string;
+    }
+    interface MyFeedback {
+    }
     interface MyFooter {
         "Color"?: string;
     }
+    interface MyHeading {
+        "text"?: string;
+    }
     interface MyHome {
     }
+    interface MyImage {
+    }
     interface MyLogin {
+        "name"?: string;
     }
     interface MyNavbar {
         "backColor"?: string;
@@ -193,8 +270,9 @@ declare namespace LocalJSX {
         "fontSize"?: string;
         "textColor"?: string;
     }
-    interface NyHeading {
-        "name"?: string;
+    interface MyRegister {
+    }
+    interface MyUser {
     }
     interface OptionButtons {
     }
@@ -208,13 +286,19 @@ declare namespace LocalJSX {
         "doctor-list": DoctorList;
         "image-show": ImageShow;
         "logo-login": LogoLogin;
+        "my-adminnav": MyAdminnav;
         "my-appointment": MyAppointment;
         "my-contactform": MyContactform;
+        "my-error": MyError;
+        "my-feedback": MyFeedback;
         "my-footer": MyFooter;
+        "my-heading": MyHeading;
         "my-home": MyHome;
+        "my-image": MyImage;
         "my-login": MyLogin;
         "my-navbar": MyNavbar;
-        "ny-heading": NyHeading;
+        "my-register": MyRegister;
+        "my-user": MyUser;
         "option-buttons": OptionButtons;
         "show-doctor": ShowDoctor;
     }
@@ -230,13 +314,19 @@ declare module "@stencil/core" {
             "doctor-list": LocalJSX.DoctorList & JSXBase.HTMLAttributes<HTMLDoctorListElement>;
             "image-show": LocalJSX.ImageShow & JSXBase.HTMLAttributes<HTMLImageShowElement>;
             "logo-login": LocalJSX.LogoLogin & JSXBase.HTMLAttributes<HTMLLogoLoginElement>;
+            "my-adminnav": LocalJSX.MyAdminnav & JSXBase.HTMLAttributes<HTMLMyAdminnavElement>;
             "my-appointment": LocalJSX.MyAppointment & JSXBase.HTMLAttributes<HTMLMyAppointmentElement>;
             "my-contactform": LocalJSX.MyContactform & JSXBase.HTMLAttributes<HTMLMyContactformElement>;
+            "my-error": LocalJSX.MyError & JSXBase.HTMLAttributes<HTMLMyErrorElement>;
+            "my-feedback": LocalJSX.MyFeedback & JSXBase.HTMLAttributes<HTMLMyFeedbackElement>;
             "my-footer": LocalJSX.MyFooter & JSXBase.HTMLAttributes<HTMLMyFooterElement>;
+            "my-heading": LocalJSX.MyHeading & JSXBase.HTMLAttributes<HTMLMyHeadingElement>;
             "my-home": LocalJSX.MyHome & JSXBase.HTMLAttributes<HTMLMyHomeElement>;
+            "my-image": LocalJSX.MyImage & JSXBase.HTMLAttributes<HTMLMyImageElement>;
             "my-login": LocalJSX.MyLogin & JSXBase.HTMLAttributes<HTMLMyLoginElement>;
             "my-navbar": LocalJSX.MyNavbar & JSXBase.HTMLAttributes<HTMLMyNavbarElement>;
-            "ny-heading": LocalJSX.NyHeading & JSXBase.HTMLAttributes<HTMLNyHeadingElement>;
+            "my-register": LocalJSX.MyRegister & JSXBase.HTMLAttributes<HTMLMyRegisterElement>;
+            "my-user": LocalJSX.MyUser & JSXBase.HTMLAttributes<HTMLMyUserElement>;
             "option-buttons": LocalJSX.OptionButtons & JSXBase.HTMLAttributes<HTMLOptionButtonsElement>;
             "show-doctor": LocalJSX.ShowDoctor & JSXBase.HTMLAttributes<HTMLShowDoctorElement>;
         }

@@ -1,0 +1,11 @@
+/* src/components/error-component/error-component.css */
+
+.error-container {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+  

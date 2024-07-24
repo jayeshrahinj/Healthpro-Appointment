@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import { href } from 'stencil-router-v2';
 
 @Component({
@@ -12,36 +12,76 @@ export class MyNavbar {
   @Prop() fontSize: string = '16px';
   @Prop() fontFamily: string = 'Arial';
 
+  @State() showLinks: boolean = true; // State for toggling links
+
+  foundUser: string | null = null;
+
+  async componentWillLoad() {
+    // Retrieve foundUser from localStorage
+    this.foundUser = localStorage.getItem('foundUser');
+  }
+
+  toggleLinks = () => {
+    this.showLinks = !this.showLinks; // Toggle the state
+    console.log('line 26 from My-navbar' + this.showLinks);
+  };
+
   render() {
-    return (
+    let navLinks = (
+      <div class={`collapse navbar-collapse `}>
+        <ul class="navbar-nav mr-auto" style={{ color: this.textColor }}>
+          <li class="nav-item">
+            <a class="nav-link" {...href('/patient')}>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" {...href('/appoint')}>
+              Book Appointment
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" {...href('/appointment')}>
+              Appointments
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" {...href('/about')}>
+              About Us
+            </a>
+          </li>
+          {this.foundUser ? (
+            <li class="nav-item">
+              <a class="nav-link" {...href('/user')}>
+                {this.foundUser}
+              </a>
+            </li>
+          ) : (
+            <li class="nav-item">
+              <a class="nav-link" {...href('/login')}>
+                Login
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    );
+    let nav = (
       <header>
-        <nav class={`navbar navbar-expand-lg navbar-light`} style={{ backgroundColor: this.backColor }}>
+        <nav id="mynav" class={`navbar navbar-expand-lg navbar-light`} style={{ backgroundColor: this.backColor }}>
+          <p id="healthProHeading" style={{ fontFamily: this.fontFamily, color: this.textColor }}>
+            HealthPro Appointments
+          </p>
 
-  <h1 id="healthProHeading" style={{ fontSize: this.fontSize, fontFamily: this.fontFamily, color: this.textColor }}>HealthPro Appointments</h1>
+          <button class="navbar-toggler" id="togglevisible" type="button" onClick={this.toggleLinks}>
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto" style={{color:this.textColor}}>
-              <li class="nav-item">
-                <a class="nav-link" style={{}}{...href('/patient')}>Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" {...href('/appoint')}>Book Appointment</a>
-              </li>
-        
-              <li class="nav-item">
-                <a class="nav-link" {...href('/about')}>About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" {...href('/appointment')}>Appointments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" {...href('/login')}> Login</a>
-              </li>
-            </ul>
-          </div>
+          {this.showLinks ? navLinks : ' '}
         </nav>
       </header>
     );
+    return nav;
   }
 }

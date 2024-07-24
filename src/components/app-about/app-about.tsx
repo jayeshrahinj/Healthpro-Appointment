@@ -6,14 +6,11 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class MyFooter {
-
-    render()
-    {
-        return(
-            <Host>
-           <h1>about page</h1>
-            </Host>
-
-        );
-    }
+  render() {
+    return (
+      <Host>
+        <h1>about page</h1>
+      </Host>
+    );
+  }
 }

@@ -7,21 +7,24 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
+| Property     | Attribute     | Description | Type     | Default     |
+| ------------ | ------------- | ----------- | -------- | ----------- |
+| `backColor`  | `back-color`  |             | `string` | `'#ffffff'` |
+| `fontFamily` | `font-family` |             | `string` | `'Arial'`   |
+| `fontSize`   | `font-size`   |             | `string` | `'16px'`    |
+| `textColor`  | `text-color`  |             | `string` | `'#000000'` |
 
 
 ## Dependencies
 
 ### Used by
 
- - [my-component](../my-component)
+ - [my-home](../my-home)
 
 ### Graph
 ```mermaid
 graph TD;
-  my-component --> my-navbar
+  my-home --> my-navbar
   style my-navbar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

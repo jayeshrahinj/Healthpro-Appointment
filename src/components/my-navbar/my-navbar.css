@@ -8,18 +8,19 @@
   height: 160px;
   border: 2px solid black;
 }
-#healthProHeading {
-  
-  margin-left: 30px; /* Adjust this value as needed */
-}
 
+#healthProHeading {
+  margin-left: 30px; 
+  font-size: 30px;
+  font-weight: bold; /* Adjust this value as needed */
+}
 
 .navbar ul {
   margin-right: 20vh;
 }
 
 .navbar-brand {
-  margin-right: 20%;
+  margin-right: auto; /* Pushes the navbar brand to the left */
   display: flex;
 }
 
@@ -55,7 +56,7 @@
   list-style-type: none;
 }
 
-/* Remove underline  */
+/* Remove underline */
 .navbar-brand h1 {
   text-decoration: none;
   margin-left: 5vh;
@@ -66,38 +67,77 @@ form {
   right: 0%;
 }
 
+#togglevisible {
+  display: none;
+}
 
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start */
     height: auto;
-    padding: 20px; /*  padding for spacing */
+    padding: 30px; /* Padding for spacing */
   }
-
+  
+  #healthProHeading {
+    margin: 0; /* Reset margin */
+    font-size: 28px;
+    font-weight: bold; /* Adjust this value as needed */
+    display: block; /* Ensure block display to stack vertically */
+    text-align: center; /* Center align the heading */
+  }
+  
   .navbar ul {
-    margin: 0; /* Remove margin */
+    text-align: center; /* Center align the navbar items */
+    margin: 10px 0; 
+    font-size: 18px;
+    margin-left: 60px;/* Adjust margin for spacing */
   }
-
-  .navbar-brand {
-    margin: 0; /* Remove margin */
-    margin-bottom: 20px; 
-    display: flex;/* between navbar-brand and other items */
+  
+  #togglevisible {
+    display: block; /* Show toggle button */
+    background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin: 10px auto; /* Center align and add margin */
   }
-
+  
+  #togglevisible .navbar-toggler-icon {
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background-color: #333; /* Adjust color as needed */
+    margin: 4px 0; /* Adjust spacing between lines */
+  }
+  
+  #togglevisible .navbar-toggler-icon::before,
+  #togglevisible .navbar-toggler-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #020000; /* Adjust color as needed */
+    margin: 4px 0; /* Adjust spacing between lines */
+  }
+  
   .navbar-nav {
     flex-direction: column;
-    margin-top: 20px; /*  margin between nav items */
+    margin-top: 20px; /* Margin between nav items */
   }
-
+  
   .navbar-nav li {
-    margin: 10px 0; /* margin between nav items */
+    margin: 10px 0; /* Margin between nav items */
+    display: inline-flex; /* Ensure items are displayed in a row */
+    justify-content: center; /* Center align nav items */
   }
-
+  
   .form-inline {
-    margin-top: 20px; /* between navbar and form */
+    margin-top: 20px; /* Margin between navbar and form */
   }
-
+  
   .navbar-brand h1 {
-    font-size: 5px; /* font size for smaller screens */
+    font-size: 25px; /* Adjust font size for smaller screens */
+    text-align: center; /* Center align the brand */
   }
 }
